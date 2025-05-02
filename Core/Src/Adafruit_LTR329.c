@@ -16,26 +16,22 @@
 #include "stm32l4xx_hal.h"
 #include "Adafruit_LTR329.h"
 #include <stdbool.h>
-
-/*!
- *   @brief  Instantiates a new LTR329 struct
- */
-Adafruit_LTR329_t Adafruit_LTR329;
+#include <stdint.h>
 
 /*!
  *   @brief  Setups the hardware for talking to the LTR329
  *   @param  *hi2c An optional pointer to an I2C interface
  *   @return True if initialization was successful, otherwise false.
  */
-bool begin(Adafruit_LTR329_t *sensor, I2C_HandleTypeDef *hi2c) {
-	uint8_t part_ID = 0;
+bool begin(Adafruit_LTR329_t *sensor, I2C_HandleTypeDef *hi2c, uint8_t i2c_addr) {
+	uint8_t part_id = 0;
 
 	// Save I2C handle and sensor address in struct
 	sensor->hi2c = hi2c;
-	sensor->i2c_addr = LTR329_I2CADDR_8BIT;
+	sensor->i2c_addr = i2c_addr;
 
 	// Try to read the PART ID register
-	if (HAL_I2C_Mem_Read(sensor->hi2c, sensor->i2c_addr, LTR329_PART_ID, I2C_MEMADD_SIZE_8BIT, &partID, 1, HAL_MAX_DELAY) != HAL_OK) {
+	if (HAL_I2C_Mem_Read(sensor->hi2c, sensor->i2c_addr, LTR329_PART_ID, I2C_MEMADD_SIZE_8BIT, &part_id, 1, HAL_MAX_DELAY) != HAL_OK) {
 		return false; // Failed to read PART ID
 	}
 
