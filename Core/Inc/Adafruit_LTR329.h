@@ -44,7 +44,7 @@
 #define LTR329_PART_ID_RESET_VALUE   0xA0 ///< Default value for PART_ID register
 #define LTR329_MANU_ID_RESET_VALUE   0x05 ///< Default value for MANUFACTURER_ID register
 #define LTR329_ALS_CTRL_RESET_VALUE  0x00 ///< Default value for ALS_CTRL register
-#define LTR329_STATUS_RESET_VALUE   0x00 ///< Default value for STATUS register
+#define LTR329_STATUS_RESET_VALUE    0x00 ///< Default value for STATUS register
 #define LTR329_CH1DATA_0_RESET_VALUE 0x00 ///< Default value for CH1DATA_0 register
 #define LTR329_CH1DATA_1_RESET_VALUE 0x00 ///< Default value for CH1DATA_1 register
 #define LTR329_CH0DATA_0_RESET_VALUE 0x00 ///< Default value for CH0DATA_0 register
@@ -90,11 +90,11 @@ typedef enum {
  *            LTR329 Light Sensor
  */
 typedef struct {
-	I2C_HandleTypeDef *hi2c; ///< I2C handle
-	uint8_t i2caddr;         ///< I2C address
+	I2C_HandleTypeDef *hi2c;  ///< I2C handle
+	uint8_t i2c_addr;         ///< I2C address
 }; Adafruit_LTR329_t;
 
 /*!  @brief Function headers */
-bool begin(Adafruit_LTR329_t *sensor, I2C_HandleTypeDef *hi2c); ///< I2C begin function
+bool begin(Adafruit_LTR329_t *sensor, I2C_HandleTypeDef *hi2c, uint8_t i2c_addr); ///< I2C begin function
 
 #endif /* INC_ADAFRUIT_LTR329_H_ */
