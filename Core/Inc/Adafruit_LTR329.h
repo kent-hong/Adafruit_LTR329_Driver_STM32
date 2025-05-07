@@ -10,7 +10,7 @@
  * Arduino C++ driver to work with STM32 HAL in C.
  *
  *
- * Authors: Kent Hong, Gabriel Dao, Kyle Tran
+ * Authors: Kent Hong, Gabriel Dao, Kyle Tsai
  */
 
 #ifndef INC_ADAFRUIT_LTR329_H_
