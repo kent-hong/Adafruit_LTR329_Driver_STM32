@@ -10,7 +10,7 @@
  *
  *    @section author Author
  *
- *    Kent Hong, Gabriel Dao, Kyle Tran (SharkSat-1)
+ *    Kent Hong, Gabriel Dao, Kyle Tsai (SharkSat-1)
  */
 
 #include "stm32l4xx_hal.h"
