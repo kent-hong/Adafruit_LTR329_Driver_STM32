@@ -97,4 +97,8 @@ typedef struct {
 /*!  @brief Function headers */
 bool begin(Adafruit_LTR329_t *sensor, I2C_HandleTypeDef *hi2c, uint8_t i2c_addr); ///< I2C begin function
 
+/*
+* TODO: Add more function headers
+*/
+
 #endif /* INC_ADAFRUIT_LTR329_H_ */
