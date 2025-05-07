@@ -43,4 +43,6 @@ bool begin(Adafruit_LTR329_t *sensor, I2C_HandleTypeDef *hi2c, uint8_t i2c_addr)
 	return true; // Initialization successful
 }
 
-
+/*
+* TODO: Add more functions
+*/
